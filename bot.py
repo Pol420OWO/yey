@@ -1,1 +1,2 @@
-print("Hola, mundo!")
+def run():
+  print("Hola, mundo!")
