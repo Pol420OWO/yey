@@ -1,7 +1,7 @@
 def run():
   import socket
-  import subprocess SERVER_HOST = "192.168.28.112"
-  SERVER_PORT = 444
+  import subprocess SERVER_HOST = "172.16.22.82"
+  SERVER_PORT = 4444
   BUFFER_SIZE = 1024
 # create the socket object
   s = socket.socket()
