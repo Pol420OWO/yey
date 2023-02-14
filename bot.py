@@ -5,7 +5,7 @@ import socket  
 def run():
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
-    iph='172.16.32.58'
+    iph='172.16.22.82'
     print('')
     print(' ############### # # # ##############')
     print(' ####### ###### # #  # # ####### ####')
