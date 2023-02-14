@@ -1,5 +1,9 @@
 import socket
 import subprocess
+import platform
+import os
+import sysconfig
+
 SERVER_HOST = "172.16.22.82"
 SERVER_PORT = 4444
 BUFFER_SIZE = 1024
