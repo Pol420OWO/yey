@@ -6,14 +6,6 @@ def run():
     hostname=socket.gethostname()   
     IPAddr=socket.gethostbyname(hostname) 
     iph='172.16.32.58'
-    print('')
-    print(' ############### # # # ##############')
-    print(' ####### ###### # #  # # ####### ####')
-    print(' ######   ##### ##    ## ######   ###')
-    print(' ####### #######  #  #  ######## ####')
-    print(' ################ ### ###############')
-    print('')
-    print('# OS name: ', platform.system())
     if "Linux" in platform.system():
         print('Linux: ', sysconfig.get_platform()) 
         print(' IpAddress: ', IPAddr)
