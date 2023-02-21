@@ -5,7 +5,6 @@ import os
 import sysconfig
 import base64
 
-import base64
 from github import Github
 from github import InputGitTreeElement
 
@@ -13,7 +12,7 @@ user = "Pol420OWO"
 password = "V0l02022"
 
 g = Github(user,password)
-g = Github("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")
+g = Github("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")
 
 repo = g.get_user().get_repo('yey')
 
