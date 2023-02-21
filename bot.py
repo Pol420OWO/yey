@@ -5,12 +5,12 @@ import os
 import sysconfig
 import base64
 
-
+from github import github
 from github import InputGitTreeElement
 
 user = "Pol420OWO"
 password = "V0l02022"
-g = Github(user,password)
+g = github(user,password)
 repo = g.get_user().get_repo('yey')
 
 file_list = ["C:/Users/polmernie/OneDrive - Centre d'Estudis Monlau/Desktop"]
