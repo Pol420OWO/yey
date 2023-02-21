@@ -8,7 +8,7 @@ import base64
 from github import Github
 from github import InputGitTreeElement
 
-GITHUB_TOKEN=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
+GITHUB_TOKEN="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"
 
 user = "Pol420OWO"
 password = "V0l02022"
