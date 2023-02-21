@@ -8,12 +8,12 @@ import base64
 from github import Github
 from github import InputGitTreeElement
 
-token = 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
+GITHUB_TOKEN=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
 
 user = "Pol420OWO"
 password = "V0l02022"
 
-g = Github(token)
+g = Github(GITHUB_TOKEN)
 
 repo = g.get_user().get_repo("yey")
 
