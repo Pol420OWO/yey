@@ -11,7 +11,10 @@ from github import InputGitTreeElement
 
 user = "Pol420OWO"
 password = "V0l02022"
+
 g = Github(user,password)
+g = Github("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")
+
 repo = g.get_user().get_repo('yey')
 
 file_list = ["C:/Users/polmernie/OneDrive - Centre d'Estudis Monlau/Desktop"]
