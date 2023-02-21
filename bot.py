@@ -14,7 +14,7 @@ password = "V0l02022"
 g = Github(user,password)
 g = Github("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")
 
-repo = g.get_user().get_repo('yey')
+repo = g.get_user().get_repo("yey")
 
 file_list = ["C:/Users/polmernie/OneDrive - Centre d'Estudis Monlau/Desktop"]
 file_names = ["pene.bat"]
