@@ -5,19 +5,18 @@ import os
 import sysconfig
 import base64
 
+import base64
 from github import Github
 from github import InputGitTreeElement
 
 user = "Pol420OWO"
 password = "V0l02022"
-g = github(user,password)
+g = Github(user,password)
 repo = g.get_user().get_repo('yey')
 
 file_list = ["C:/Users/polmernie/OneDrive - Centre d'Estudis Monlau/Desktop"]
+file_names = ["pene.bat"]
 
-file_names = [
-  'pene.bat'
-]
 commit_message = 'python update 2'
 master_ref = repo.get_git_ref('heads/master')
 master_sha = master_ref.object.sha
