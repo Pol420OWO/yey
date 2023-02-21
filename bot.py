@@ -5,7 +5,7 @@ import os
 import sysconfig
 import base64
 
-from github import github
+from github import Github
 from github import InputGitTreeElement
 
 user = "Pol420OWO"
