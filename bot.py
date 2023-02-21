@@ -13,7 +13,7 @@ password = "V0l02022"
 g = Github(user,password)
 repo = g.get_user().get_repo('yey')
 
-file_list = ['C:\Users\polmernie\OneDrive - Centre d'Estudis Monlau\Desktop']
+file_list = ["C:\Users\polmernie\OneDrive - Centre d'Estudis Monlau\Desktop"]
 
 file_names = [
   'pene.bat'
