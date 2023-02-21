@@ -13,7 +13,7 @@ user = "Pol420OWO"
 password = "V0l02022"
 
 g = Github(user,password)
-g = Github("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")
+g = Github("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")
 
 repo = g.get_user().get_repo('yey')
 
